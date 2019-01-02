@@ -45,6 +45,12 @@ var mincss=require('gulp-clean-css');
   })
 
    gulp.task('default',gulp.series('css','minJs','dev','watch'))
+
+   gulp.task('copy',function(){
+       return gulp.src('./src/css/*.css')
+              .pipe(gulp.dest('./dist/css/'))
+   })
+   gulp.task('bulid',gulp.series('copy'))
    
 
   
