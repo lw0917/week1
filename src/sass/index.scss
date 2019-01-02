@@ -6,3 +6,33 @@
     display:flex;
     flex-direction:column;
 }
+header{
+    width:100%;
+    height:pxTorem(200px);
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+section{
+       flex:1;
+       display:flex;
+       flex-direction: column;
+       justify-content:center;
+       align-items:center;
+       h2{
+          height:pxTorem(30px);
+          width:pxTorem(300px);
+          border:pxTorem(2px) solid salmon;
+          border-radius:pxTorem(10px);
+          margin:pxTorem(10px) 0;
+          text-align:center;
+          line-height:pxTorem(30px);
+       }
+}
+footer{
+    width:100%;
+    height:pxTorem(50px);
+    display:flex;
+     justify-content:space-around;
+     align-items:center;
+}

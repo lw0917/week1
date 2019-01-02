@@ -18,7 +18,7 @@ var mincss=require('gulp-clean-css');
   })
   //监听sass
   gulp.task('watch',function(){
-      return gulp.src('./src/sass/*.scss',gulp.series('css'))
+      return gulp.watch('./src/sass/*.scss',gulp.series('css'))
   })
     //压缩js
     gulp.task('minJs',function(){
