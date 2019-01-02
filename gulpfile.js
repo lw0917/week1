@@ -11,12 +11,15 @@ var url=require('url');
   gulp.task('css',function(){
        return gulp.src('./src/sass/*.scss')
               .pipe(sass())
+              .pipe(concat('all.css'))
               .pipe(gulp.dest('./src/css/'))
   })
   //监听sass
   gulp.task('watch',function(){
       return gulp.src('./src/sass/*.scss',gulp.series('css'))
   })
+ 
+  //起服务
   gulp.task('dev',function(){
       return gulp.src('./src')
              .pipe(server({
@@ -33,3 +36,13 @@ var url=require('url');
                  }
              }))
   })
+
+   gulp.task('default',gulp.series('css','dev','watch'))
+   
+
+    //压缩js
+    gulp.task('minJs',function(){
+        return gulp.src('./src/js/index.js')
+               .pipe(uglify())
+               .pipe('./dist/js/')
+    })
